@@ -1,14 +1,16 @@
 # Ray Tracing Engine
 
 ## Overview
-This project implements a **Ray Tracing Engine** to render realistic 3D images by simulating the behavior of light. The engine calculates reflections, refractions, and shadows to create high-quality visuals.
+This project implements a **Ray Tracing Engine** that renders realistic 3D images by simulating the behavior of light. The engine calculates reflections, refractions, and shadows to create high-quality visuals. The script is fully configurable, allowing users to customize resolution, depth, and lighting parameters through command-line arguments.
 
 ### Key Features
 - **Ray tracing** algorithm for realistic rendering.
 - Supports **spheres, planes, and triangles** as scene objects.
 - Implements **diffusivity, specular reflection, and recursion depth** for enhanced realism.
-- Generates high-resolution images.
 - **Configurable resolution and depth** for flexible rendering quality.
+- **Command-line arguments** to customize scene parameters easily.
+- **Shadow calculations** for accurate scene realism.
+- **Custom output filenames** for saving rendered images.
 
 ## Getting Started
 
@@ -20,13 +22,23 @@ pip install numpy matplotlib tqdm
 ```
 
 ### Running the Code
-Execute the following command to generate a ray-traced image:
+To generate a ray-traced image, execute:
 
 ```bash
-python ray_tracing_engine.py --width 1920 --height 1080 --depth 10
+python ray_tracing_engine.py --width 800 --height 600 --depth 10 --ambient 0.1 --diffuse 0.8 --specular 1.2 --specular_k 100 --output my_render.png
 ```
 
-You can modify the resolution and recursion depth using command-line arguments.
+#### Available Arguments:
+| Argument        | Description                                    | Default |
+|--------------- |--------------------------------|---------|
+| `--width`      | Width of the output image      | 200     |
+| `--height`     | Height of the output image     | 300     |
+| `--depth`      | Max number of light reflections | 5       |
+| `--ambient`    | Ambient lighting intensity     | 0.05    |
+| `--diffuse`    | Diffuse lighting coefficient   | 1.0     |
+| `--specular`   | Specular lighting coefficient  | 1.0     |
+| `--specular_k` | Specular exponent for reflection | 50      |
+| `--output`     | Output file name               | output.png |
 
 ## Implementation Details
 
@@ -34,14 +46,22 @@ You can modify the resolution and recursion depth using command-line arguments.
 The algorithm follows these steps:
 1. **Ray Generation** – Casts rays from the camera into the scene.
 2. **Intersection Tests** – Determines if a ray intersects with an object (plane, sphere, or triangle).
-3. **Shading Model** – Applies lighting calculations using Lambert and Blinn-Phong shading.
-4. **Reflection Handling** – Uses recursion for realistic reflections.
-5. **Image Rendering** – Renders the final scene pixel by pixel.
+3. **Shading Model** – Applies Lambert and Blinn-Phong shading for diffuse and specular lighting.
+4. **Shadow Handling** – Checks for occlusion to simulate realistic shadows.
+5. **Reflection Handling** – Uses recursion to trace reflections.
+6. **Image Rendering** – Loops over each pixel and computes color values.
 
-### Example Output
-Below is an example output of a rendered scene with depth = 10.
+### Example Outputs
+Below are example rendered scenes with different configurations:
 
-![Rendered Output](src/output/fig.png)
+#### **Basic Scene with Default Settings**
+![Basic Scene](path_to_basic_scene.png)
+
+#### **Higher Depth Reflections** (Depth = 15)
+![Depth 15 Scene](path_to_depth15_scene.png)
+
+#### **Increased Resolution (1920x1080)**
+![High Res Scene](path_to_high_res_scene.png)
 
 ## Contributors
 - **Shreyansh Goyal**
