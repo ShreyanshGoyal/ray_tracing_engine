@@ -52,17 +52,51 @@ The algorithm follows these steps:
 6. **Image Rendering** – Loops over each pixel and computes color values.
 
 ### Example Outputs
-Below are example rendered scenes with different configurations:
+Below are example rendered scenes with different configurations, along with the commands used to generate them.
 
-#### **Basic Scene with Default Settings**
+#### **1. Basic Scene with Default Settings**
+```bash
+python ray_tracing_engine.py --width 200 --height 300 --depth 5 --output basic_scene.png
+```
 ![Basic Scene](path_to_basic_scene.png)
 
-#### **Higher Depth Reflections** (Depth = 15)
+#### **2. Higher Depth Reflections (Depth = 15)**
+```bash
+python ray_tracing_engine.py --width 400 --height 600 --depth 15 --output depth15_scene.png
+```
 ![Depth 15 Scene](path_to_depth15_scene.png)
 
-#### **Increased Resolution (1920x1080)**
+🔹 *Comparison:* Increasing recursion depth results in more realistic reflections but increases computation time.
+
+#### **3. Increased Resolution (1920x1080)**
+```bash
+python ray_tracing_engine.py --width 1920 --height 1080 --depth 10 --output high_res_scene.png
+```
 ![High Res Scene](path_to_high_res_scene.png)
 
+🔹 *Comparison:* Higher resolution provides more detail but takes longer to render.
+
+#### **4. Effect of Ambient Light Intensity**
+```bash
+python ray_tracing_engine.py --width 800 --height 600 --depth 10 --ambient 0.2 --output ambient_high.png
+python ray_tracing_engine.py --width 800 --height 600 --depth 10 --ambient 0.05 --output ambient_low.png
+```
+*Left: High Ambient Light (0.2) | Right: Low Ambient Light (0.05)*
+
+![Ambient Light Comparison](path_to_ambient_comparison.png)
+
+🔹 *Comparison:* Higher ambient lighting makes the scene brighter but reduces contrast.
+
+#### **5. Effect of Specular Reflection**
+```bash
+python ray_tracing_engine.py --width 800 --height 600 --depth 10 --specular 2.0 --output specular_high.png
+python ray_tracing_engine.py --width 800 --height 600 --depth 10 --specular 0.5 --output specular_low.png
+```
+*Left: High Specular (2.0) | Right: Low Specular (0.5)*
+
+![Specular Comparison](path_to_specular_comparison.png)
+
+🔹 *Comparison:* Higher specular values create sharper reflections, making surfaces appear shinier.
 ## Contributors
 - **Shreyansh Goyal**
 - **Prathyush Thunguri**
