@@ -88,8 +88,8 @@ python ray_tracing_engine.py --width 800 --height 600 --depth 10 --ambient 0.05 
     <td align="center"><b>Low Ambient Light (0.05)</b></td>
   </tr>
   <tr>
-    <td><img src="src/outputs/ambient_high.png" width="400"></td>
-    <td><img src="src/outputs/ambient_low.png" width="400"></td>
+    <td><img src="src/output/ambient_high.png" width="400"></td>
+    <td><img src="src/output/ambient_low.png" width="400"></td>
   </tr>
 </table>
 
@@ -102,7 +102,17 @@ python ray_tracing_engine.py --width 800 --height 600 --depth 10 --specular 0.5 
 ```
 *Left: High Specular (2.0) | Right: Low Specular (0.5)*
 
-![Specular Comparison](path_to_specular_comparison.png)
+<table>
+  <tr>
+    <td align="center"><b>High Ambient Light (0.2)</b></td>
+    <td align="center"><b>Low Ambient Light (0.05)</b></td>
+  </tr>
+  <tr>
+    <td><img src="src/output/specular_high.png" width="400"></td>
+    <td><img src="src/output/specular_low.png" width="400"></td>
+  </tr>
+</table>
+
 
 🔹 *Comparison:* Higher specular values create sharper reflections, making surfaces appear shinier.
 ## Contributors
