@@ -104,8 +104,8 @@ python ray_tracing_engine.py --width 800 --height 600 --depth 10 --specular 0.5 
 
 <table>
   <tr>
-    <td align="center"><b>High Ambient Light (0.2)</b></td>
-    <td align="center"><b>Low Ambient Light (0.05)</b></td>
+    <td align="center"><b>High Specular  (0.2)</b></td>
+    <td align="center"><b>Low Specular  (0.5)</b></td>
   </tr>
   <tr>
     <td><img src="src/output/specular_high.png" width="400"></td>
