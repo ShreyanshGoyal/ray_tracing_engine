@@ -125,6 +125,8 @@ def main(w, h, ambient, diffuse_c, specular_c, specular_k, depth_max, output_fil
     plt.imsave(output_file, img)
     print(f"Image saved as {output_file}")
 
+import os
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Ray Tracing Engine")
     parser.add_argument("--width", type=int, default=200, help="Width of the output image")
@@ -134,6 +136,14 @@ if __name__ == '__main__':
     parser.add_argument("--diffuse", type=float, default=1.0, help="Diffuse lighting coefficient")
     parser.add_argument("--specular", type=float, default=1.0, help="Specular lighting coefficient")
     parser.add_argument("--specular_k", type=int, default=50, help="Specular exponent for reflection")
-    parser.add_argument("--output", type=str, default="/src/output/output.png", help="Output file name")
+    parser.add_argument("--output", type=str, default="", help="Output file name (optional)")
+
     args = parser.parse_args()
+    # Ensure output directory exists
+    output_dir = "src/outputs"
+    os.makedirs(output_dir, exist_ok=True)
+    # If no output filename is provided, generate one dynamically
+    if args.output == "":
+        args.output = f"{output_dir}/w{args.width}_h{args.height}_d{args.depth}_a{args.ambient}_diff{args.diffuse}_spec{args.specular}_specK{args.specular_k}.png"
+    
     main(args.width, args.height, args.ambient, args.diffuse, args.specular, args.specular_k, args.depth, args.output)

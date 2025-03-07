@@ -58,13 +58,13 @@ Below are example rendered scenes with different configurations, along with the 
 ```bash
 python ray_tracing_engine.py --width 200 --height 300 --depth 5 --output basic_scene.png
 ```
-![Basic Scene](path_to_basic_scene.png)
+![Basic Scene](src/output/basic_scene.png)
 
 #### **2. Higher Depth Reflections (Depth = 15)**
 ```bash
 python ray_tracing_engine.py --width 400 --height 600 --depth 15 --output depth15_scene.png
 ```
-![Depth 15 Scene](path_to_depth15_scene.png)
+![Depth 15 Scene](src/output/depth15_scene.png)
 
 🔹 *Comparison:* Increasing recursion depth results in more realistic reflections but increases computation time.
 
@@ -72,7 +72,7 @@ python ray_tracing_engine.py --width 400 --height 600 --depth 15 --output depth1
 ```bash
 python ray_tracing_engine.py --width 1920 --height 1080 --depth 10 --output high_res_scene.png
 ```
-![High Res Scene](path_to_high_res_scene.png)
+![High Res Scene](src/output/high_res_scene.png)
 
 🔹 *Comparison:* Higher resolution provides more detail but takes longer to render.
 
