@@ -82,8 +82,16 @@ python ray_tracing_engine.py --width 800 --height 600 --depth 10 --ambient 0.2 -
 python ray_tracing_engine.py --width 800 --height 600 --depth 10 --ambient 0.05 --output ambient_low.png
 ```
 *Left: High Ambient Light (0.2) | Right: Low Ambient Light (0.05)*
-
-![Ambient Light Comparison](path_to_ambient_comparison.png)
+<table>
+  <tr>
+    <td align="center"><b>High Ambient Light (0.2)</b></td>
+    <td align="center"><b>Low Ambient Light (0.05)</b></td>
+  </tr>
+  <tr>
+    <td><img src="src/outputs/ambient_high.png" width="400"></td>
+    <td><img src="src/outputs/ambient_low.png" width="400"></td>
+  </tr>
+</table>
 
 🔹 *Comparison:* Higher ambient lighting makes the scene brighter but reduces contrast.
 
